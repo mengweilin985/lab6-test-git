@@ -1,5 +1,5 @@
 import os
-import numpy as np
+
 
 from flask import Flask, request, jsonify
 from transformers import pipeline
