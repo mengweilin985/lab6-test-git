@@ -1,0 +1,19 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: nlp-deploy-run  # Change the service name
+spec:
+  template:
+    spec:
+      containers:
+        - image: asia-southeast1-docker.pkg.dev/nlp-deploy-454913/nlp-deploy-repository/nlp-deploy-image:latest
+          env:
+            - name: PORT
+              value: "8080"
+          ports:
+            - containerPort: 8080
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "2"
+          args: ["python", "main.py"]

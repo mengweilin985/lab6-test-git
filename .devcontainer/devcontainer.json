@@ -1,0 +1,20 @@
+{
+  "name": "TensorFlow DevContainer",
+  "build": {
+    "dockerfile": "../Dockerfile.dev"
+  },
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "editor.formatOnSave": true
+  },
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-python.debugpy",
+    "ms-azuretools.vscode-docker"
+  ],
+  "forwardPorts": [5678],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=delegated",
+  "workspaceFolder": "/workspace"
+}
+
